@@ -1,0 +1,586 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather Sans", sans-serif;
+}
+
+:root {
+    --colorDark1: #112d4e;
+    --colorDark2: #3f72af;
+    --colorLight1: #dbe2ef;
+    --colorLight2: #f9f7f7;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    /* max-height: 600px; */
+    color: var(--colorLight2);
+    background-image: linear-gradient(160deg, #030d18 0%, #052751 100%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1190px;
+    /* max-height: 100vh; */
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 2rem;
+    background-color: #ffffff0f;
+}
+
+@media only screen and (max-width: 1432px) {
+    .container {
+        width: 1100px;
+    }
+}
+
+@media only screen and (max-width: 1341px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.tab-container {
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab {
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+}
+
+.tab.current-tab {
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 1203px) {
+    .container {
+        width: 800px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .tab-container {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 821px) {
+    .container {
+        width: 600px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .tab-container {
+        width: 80%;
+    }
+    /* .form-container {
+        display: none;
+        width: 50px;
+        margin-left:100px ;
+        margin-right:100px ;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        gap: 0 10px;
+        margin-bottom: 2rem;
+    } */
+}
+
+@media only screen and (max-width: 708px) {
+    .container {
+        width: 530px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .tab-container {
+        width: 80%;
+    }
+}
+
+.weather-container {
+    margin-block: 3rem;
+    /* max-height: 100px; */
+}
+
+.sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grant-location-container {
+    display: none;
+}
+
+.grant-location-container.active {
+    display: flex;
+}
+
+.grant-location-container img {
+    margin-bottom: 2rem;
+}
+
+.grant-location-container p:first-of-type {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.grant-location-container p:last-of-type {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+.loading-container {
+    display: none;
+}
+
+.loading-container.active {
+    display: flex;
+}
+
+.user-info-container {
+    display: none;
+}
+
+.user-info-container.active {
+    display: flex;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.user-info-container p {
+    font-size: 1.4rem;
+    font-weight: 200;
+}
+
+.user-info-container img {
+    width: 90px;
+    height: 90px;
+}
+
+.name p {
+    font-size: 1.6rem;
+}
+
+.name img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+p[data-weatherdesc] {
+    font-size: 1rem;
+}
+
+/* p[data-weathericon]{
+    display: none;
+} */
+.user-info-container p[data-temp] {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 1203px) {
+    .user-info-container p[data-temp] {
+        font-size: 1.9rem;
+        font-weight: 700;
+    }
+}
+
+@media only screen and (max-width: 708px) {
+    .user-info-container p[data-temp] {
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+}
+
+.parameter-container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 30px;
+    margin-top: 2rem;
+}
+
+@media only screen and (max-width: 821px) {
+    .parameter-container {
+        width: 80%;
+    }
+}
+
+.parameter {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1.5rem;
+    /* width:30%; */
+    width: 200px;
+    height: 140px;
+    gap: 5px 0;
+    align-items: center;
+}
+
+@media only screen and (max-width: 821px) {
+    .parameter {
+        width: 190px;
+        height: 140px;
+    }
+}
+
+@media only screen and (max-width: 708px) {
+    .parameter {
+        width: 130px;
+        height: 140px;
+    }
+}
+
+.parameter img {
+    width: 50px;
+    height: 50px;
+}
+
+.parameter p:first-of-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type {
+    font-size: 1rem;
+    font-weight: 200;
+}
+@media only screen and (max-width: 577px) {
+    .container {
+        width: 450px;
+    }
+    .loadingScrn{
+        height: 110px;
+        width: 110px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .tab-container {
+        width: 80%;
+    }
+
+    .name p {
+        font-size: 1.4rem;
+    }
+
+    p[data-weatherdesc] {
+        font-size: 0.9rem;
+    }
+
+    .user-info-container p[data-temp] {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    .parameter {
+        width: 110px;
+        height: 137px;
+    }
+    .parameter-container {
+        width: 50%;
+    }
+    .parameter img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .parameter p:first-of-type {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .parameter p:last-of-type {
+        font-size: 0.9rem;
+        font-weight: 200;
+    }
+    
+}
+@media only screen and (max-width: 486px) {
+    .container {
+        width: 350px;
+    }
+    .loadingScrn{
+        height: 90px;
+        width: 90px;
+    }
+
+    h1 {
+        font-size: 1.35rem;
+    }
+
+    .tab-container {
+        width: 80%;
+    }
+    .tab {
+        font-size: 12px;
+    }
+    .name p {
+        font-size: 1.4rem;
+    }
+    p[data-weatherdesc] {
+        font-size: 0.9rem;
+    }
+
+    .user-info-container p[data-temp] {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    .parameter {
+        width: 90px;
+        height: 130px;
+        gap: 3px 0;
+    }
+    .parameter-container {
+        width: 50%;
+        gap: 6px 16px;
+    }
+    .parameter img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .parameter p:first-of-type {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .parameter p:last-of-type {
+        font-size: 0.61rem;
+        font-weight: 200;
+    }
+    .grant-location-container img {
+        margin-bottom: 2rem;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .grant-location-container p:first-of-type {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .grant-location-container p:last-of-type {
+        font-size: 0.65rem;
+        font-weight: 500;
+        margin-top: 0.75rem;
+        margin-bottom: 1.75rem;
+        letter-spacing: 0.75px;
+    }
+    .btn{
+        all: unset;
+        width: 90px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #6d8baf;
+    }
+    
+}
+
+@media only screen and (max-width: 370px) {
+    .container {
+        width: 310px;
+    }
+    .loadingScrn{
+        height: 90px;
+        width: 90px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        word-spacing: 2px;
+    }
+
+    .tab-container {
+        width: 79%;
+        gap: 3px;
+    }
+    .tab {
+        font-size: 11px;
+    }
+    .name p {
+        font-size: 1.2rem;
+    }
+    p[data-weatherdesc] {
+        font-size: 0.8rem;
+    }
+
+    .user-info-container p[data-temp] {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    .parameter {
+        width: 75px;
+        height: 120px;
+        gap: 3px 0;
+    }
+    .parameter-container {
+        width: 50%;
+        gap: 6px 10px;
+    }
+    .parameter img {
+        width: 48px;
+        height: 40px;
+    }
+    
+    .parameter p:first-of-type {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .parameter p:last-of-type {
+        font-size: 0.5rem;
+        font-weight: 100;
+    }
+    .grant-location-container img {
+        margin-bottom: 2rem;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .grant-location-container p:first-of-type {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .grant-location-container p:last-of-type {
+        font-size: 0.65rem;
+        font-weight: 500;
+        margin-top: 0.75rem;
+        margin-bottom: 1.75rem;
+        letter-spacing: 0.75px;
+    }
+    .btn{
+        all: unset;
+        width: 90px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #6d8baf;
+    }
+    
+    
+}
+.form-container {
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 2rem;
+}
+
+/* ----- */
+.form-container.active {
+    scale: 1;
+    opacity: 1;
+    display: flex;
+}
+
+.form-container input {
+    all: unset;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+/* @media only screen and (max-width: 1203px) {
+    .form-container {
+        width: calc(85% - 80px);
+    }
+} */
+
+.form-container input::placeholder {
+    color: rgba(224, 224, 224, 0.7);
+}
+
+.form-container input:focus {
+    outline: 3px solid rgba(19, 19, 51, 0.7);
+}
+
+.form-container .btn {
+    padding: unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-bottom: 1px;
+    background-color: #052751;
+}
+.btn{
+    all: unset;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #6d8baf;
+}
